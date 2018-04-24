@@ -88,7 +88,51 @@ int main(){
 	cout<< endl;
 	cout<< "                 Welcome to the bank" << endl;
 	cout<< endl;
-	cout<< "                 Lets create and account" << endl;
+	cout<< "                 Lets create an account" << endl;
+	cout<< "Please enter a name for the account " << endl;
+	string name;
+	cout<< "Please enter a phone number " << endl;
+	string phone;
 	
 	
+	
+	do {
+		
+		cout<< endl;
+		cout<< "             Please make a selection" << endl;
+		cout<< " Make a deposit(d)" << endl;
+		cout<< " Make a withdraw(w) " << endl;
+		cout<< " Print out Balance(p) " << endl;
+		cout<< " Exit out of system(e) " << endl;
+		cout<< endl;
+		cout<< "Your choice is: " << endl;
+		cin>> choice;
+		
+		
+		
+		switch(choice)
+		{
+			case 'd':
+			void deposit();
+			break;
+			case 'w':
+			void withdraw();
+			break;
+			case 'p':
+			void print();
+			break;
+			case 'e':
+			exit(1);
+			break;
+			
+			default :
+			cout<< "Value not recognized please choose (d,w,p,e) ";
+		}
+	}
+		
+		while (1);
+	
+	
+	
+		return 0;
 }
