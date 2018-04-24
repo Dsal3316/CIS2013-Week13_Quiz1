@@ -6,10 +6,16 @@ int number = 100;
 class BankAccount {
 	public:
 		 void deposit(int x){
+			 cout << "Enter amount you would like to depsit: " << endl;
+			 cin>> x;
 			balance += x;
+			cout << "Your Balance is now " << balance << endl;
 		}
 		void withdraw(int y){
+			cout<< "enter the amout you would like to withdraw: " << endl;
+			cin>>y;
 			balance-= y;
+			cout << "Your balanace is now " << balance << endl;
 		}
 		BankAccount(){
 			string nm = "Anonymous";
@@ -75,7 +81,7 @@ class Checking: public BankAccount{
 private:
 	int overdraft_fee;
 public:
-	Checking():BankAccount(){
+	Checking(string n, string p):BankAccount(n,p){
 		overdraft_fee = 25;
 	}
 };
@@ -85,6 +91,7 @@ int main(){
 	char choice;
 	string name;
 	string phone;
+	string acct_number;
 	
 	cout<< endl;
 	cout<< "                 Welcome to the bank" << endl;
@@ -95,7 +102,8 @@ int main(){
 	cout<< "Please enter a phone number " << endl;
 	cin>> phone;
 	
-	
+	Checking newC (name, phone);
+	Savings newS (name, phone);
 	
 	do {
 		
@@ -109,22 +117,18 @@ int main(){
 		cout<< "Your choice is: " << endl;
 		cin>> choice;
 		
-		Checking new_a;
+		
 		
 		switch(choice)
 		{
 			case 'd':
-			cout<<" Please enter amout for deposit ";
-			cin>> x;
-			new_a.deposit(100);
+			newC.deposit(100);
 			break;
 			case 'w':
-			cout<<" Please enter amout to withdraw ";
-			cin>> y;
-			new_a.withdraw(100);
+			newC.withdraw(100);
 			break;
 			case 'p':
-			void.print();
+			newC.print();
 			break;
 			case 'e':
 			exit(1);
