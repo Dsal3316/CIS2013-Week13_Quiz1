@@ -83,16 +83,17 @@ int main(){
 	
 	char d,w,p,e;
 	char choice;
-	
+	string name;
+	string phone;
 	
 	cout<< endl;
 	cout<< "                 Welcome to the bank" << endl;
 	cout<< endl;
 	cout<< "                 Lets create an account" << endl;
 	cout<< "Please enter a name for the account " << endl;
-	string name;
+	cin>> name;
 	cout<< "Please enter a phone number " << endl;
-	string phone;
+	cin>> phone;
 	
 	
 	
@@ -108,18 +109,18 @@ int main(){
 		cout<< "Your choice is: " << endl;
 		cin>> choice;
 		
-		
+		Checking new_a;
 		
 		switch(choice)
 		{
 			case 'd':
-			void deposit();
+			new_a.deposit(100);
 			break;
 			case 'w':
-			void withdraw();
+			new_a.withdraw(100);
 			break;
 			case 'p':
-			void print();
+			new_a.print();
 			break;
 			case 'e':
 			exit(1);
