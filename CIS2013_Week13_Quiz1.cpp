@@ -34,6 +34,7 @@ class BankAccount {
 			cout<< "User: " << name<< endl;
 			cout << "Phone: " << phone << endl;
 			cout << "Rate: " << rate << endl;
+			cout << "Balance: " << balance << endl;
 		}
 
 
@@ -122,10 +123,10 @@ int main(){
 		switch(choice)
 		{
 			case 'd':
-			newC.deposit(100);
+			newC.deposit(d);
 			break;
 			case 'w':
-			newC.withdraw(100);
+			newC.withdraw(w);
 			break;
 			case 'p':
 			newC.print();
