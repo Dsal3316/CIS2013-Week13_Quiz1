@@ -81,7 +81,7 @@ public:
 };
 int main(){
 	
-	char d,w,p,e;
+	char d,w,p,e,x,y;
 	char choice;
 	string name;
 	string phone;
@@ -114,13 +114,17 @@ int main(){
 		switch(choice)
 		{
 			case 'd':
+			cout<<" Please enter amout for deposit ";
+			cin>> x;
 			new_a.deposit(100);
 			break;
 			case 'w':
+			cout<<" Please enter amout to withdraw ";
+			cin>> y;
 			new_a.withdraw(100);
 			break;
 			case 'p':
-			new_a.print();
+			void.print();
 			break;
 			case 'e':
 			exit(1);
