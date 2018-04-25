@@ -88,8 +88,9 @@ public:
 };
 int main(){
 	
-	char d,w,p,e,x,y;
+	char d,w,p,e;
 	char choice;
+	char select;
 	string name;
 	string phone;
 	string acct_number;
@@ -102,10 +103,15 @@ int main(){
 	cin>> name;
 	cout<< "Please enter a phone number " << endl;
 	cin>> phone;
+	cout<< "Please select checking(c) or savings(s):" << endl;
+	cin>> select;
 	
 	Checking newC (name, phone);
 	Savings newS (name, phone);
 	
+	
+	//checking menu
+	if (select == 'c');
 	do {
 		
 		cout<< endl;
@@ -130,6 +136,42 @@ int main(){
 			break;
 			case 'p':
 			newC.print();
+			break;
+			case 'e':
+			exit(1);
+			break;
+			
+			default :
+			cout<< "Value not recognized please choose (d,w,p,e) ";
+		}
+	}
+	
+	// savings menu
+	while (select == 's');
+	do {
+		
+		cout<< endl;
+		cout<< "             Please make a selection" << endl;
+		cout<< " Make a deposit(d)" << endl;
+		cout<< " Make a withdraw(w) " << endl;
+		cout<< " Print out Balance(p) " << endl;
+		cout<< " Exit out of system(e) " << endl;
+		cout<< endl;
+		cout<< "Your choice is: " << endl;
+		cin>> choice;
+		
+		
+		
+		switch(choice)
+		{
+			case 'd':
+			newS.deposit(d);
+			break;
+			case 'w':
+			newS.withdraw(w);
+			break;
+			case 'p':
+			newS.print();
 			break;
 			case 'e':
 			exit(1);
